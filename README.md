@@ -65,21 +65,6 @@ Each run plays a single game.
 | `MAX_DEPTH` | `Main` | `4` | Search depth for the minimax tree |
 | `EMPTY` / `HUMAN` / `PC` | `Main` | `0` / `1` / `2` | Cell state constants |
 
-## Known Limitations
-
-- **The evaluation function is randomized.** Non-terminal positions are scored with `Math.random() * 10`, so outside of wins and losses that fall within the search horizon, the AI's move choice is effectively arbitrary. The search currently detects and takes immediate wins and avoids immediate losses, but does not play strategically.
-- The AI does not block threats that fall beyond its search depth.
-- The program exits after one game; there is no rematch loop.
-- The board display is plain text and aligned for readability, not for a polished UI.
-
-## Possible Improvements
-
-- Replace the random heuristic with a real evaluation function (e.g., counting two- and three-in-a-row threats, center control, and open lines)
-- Add alpha-beta pruning to search deeper within the same time budget
-- Add a rematch loop and difficulty levels
-- Track and display win statistics
-- Add unit tests for `playerWon`, `calculateRow`, and `transformChildNumber2Column`
-
 ## Project Structure
 
 ```
